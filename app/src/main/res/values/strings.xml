@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">RetrofitGitHubApi</string>
+    <string name="disconnected">Internet Disconnected. Ensure that internet connectivity is active</string>
+    <string name="username">EtoroAbasi Akpan</string>
+    <string name="link">Git Link</string>
+    <string name="username_header">Username</string>
+    <string name="link_header">GitHub Link Profile</string>
+    <string name="github_link">https://github.com/etoroabasi</string>
+    <string name="followers">Followers: </string>
+    <string name="following">Following: </string>
+    <string name="share">Share </string>
+</resources>
