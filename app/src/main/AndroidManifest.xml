@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--WE HAVE TO SPECIFY THE PARENT OF THE DETAIL ACTIVITY, ELSE THE upEnabled icon won't work
+ie android:parentActivityName. This works for Api level 16 and above
+we also addded the meta-data tag in the DetailActivity
+ TODO find out why we need the meta-data tag
+ TODO confirm the parentActivityName thing for the upEnabled...-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.retrofitgithubapi">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,7 +22,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".controller.DetailActivity"></activity>
+        <activity android:name=".controller.DetailActivity"
+            android:parentActivityName=".controller.MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".controller.MainActivity"/>
+        </activity>
     </application>
 
 </manifest>
