@@ -91,6 +91,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                         intent.putExtra("FOLLOWERS", clickedData.getFollowers());
                         intent.putExtra("FOLLOWING", items.get(position).getAvatar());
                         intent.putExtra("LINK", clickedData.getLink());
+
+                        //TODO FIND OUT MORE ON addFlags();
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);     //since we are starting a new activity from a class other
+                                                                            //than the previous activity class, ie MainAcitivity
                         context.startActivity(intent);
                         Toast.makeText(v.getContext(), "You clicked " + clickedData.getUsername(), Toast.LENGTH_SHORT).show();
 

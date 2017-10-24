@@ -23,9 +23,11 @@ Also notice the tools:showIn attribute in the RecyclerView-->
     <TextView
         android:id="@+id/textview_main_disconnected"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:text="@string/disconnected"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+
+         />
 
 </android.support.v4.widget.SwipeRefreshLayout>

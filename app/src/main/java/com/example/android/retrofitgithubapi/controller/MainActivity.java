@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeLayout_main);
         //TODO CHECK OUT
-        swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_green_dark);   //check out what this does
+        swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_green_dark);   //this sets the color of the refresh spinning dialog
 
         //This is like onClickListener for Buttons, but for Swipe. it is OnRefreshListener
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener(){
@@ -97,9 +97,10 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<ItemResponse> call, Throwable t) {
                     Log.d("Error", t.getMessage());
-                    Toast.makeText(MainActivity.this, "Error Fetching Data!!!", Toast.LENGTH_SHORT).show();
-                    disconnected.setVisibility(View.VISIBLE);       //show the textview that will display internet connectivity error
+                    Toast.makeText(MainActivity.this, "Error Fetching Data!!!" + t.getMessage(), Toast.LENGTH_SHORT).show();
                     progressDialog.hide();      //still hide the proigressDialog
+                    disconnected.setVisibility(View.VISIBLE);       //show the textview that will display internet connectivity error
+
 
                 }
             });
