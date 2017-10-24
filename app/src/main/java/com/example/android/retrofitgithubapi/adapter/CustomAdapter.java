@@ -16,8 +16,6 @@ import com.example.android.retrofitgithubapi.controller.DetailActivity;
 import com.example.android.retrofitgithubapi.model.Item;
 import com.squareup.picasso.Picasso;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 /**
@@ -54,7 +52,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         //the picasso, puts the avatar into the image view, the plcaeholder is for the image that would show
         //for the mean time while the original avatar is loading. it is optional
         Picasso.with(context).load(items.get(position).getAvatar())
-                .placeholder(R.drawable.loadingGif)
+                .placeholder(R.drawable.loading_gif)
                 .into(holder.avatar);
 
     }

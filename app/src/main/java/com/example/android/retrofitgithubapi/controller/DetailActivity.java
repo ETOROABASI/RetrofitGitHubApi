@@ -15,8 +15,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.android.retrofitgithubapi.R;
 
-import org.w3c.dom.Text;
-
 public class DetailActivity extends AppCompatActivity {
     TextView link, followers, following, username;
     Toolbar toolbar;
@@ -46,12 +44,12 @@ public class DetailActivity extends AppCompatActivity {
         Linkify.addLinks(this.link, Linkify.WEB_URLS);      //telling our device that the link is not just an ordinary text but a
                                                             //web url link. I'm using this.link cos I have 2 link variables, nothing special
         this.username.setText(username);
-        this.following.setText(following);
-        this.followers.setText(followers);
+        this.following.setText(R.string.following + following);
+        this.followers.setText(R.string.followers + followers);
 
         //Same syntax as Picasso in Custom Adapter
         Glide.with(this).load(avatar)
-                .placeholder(R.drawable.loadingImage)
+                .placeholder(R.drawable.loading_image)
                 .into(this.avatar);
 
         //COULD HAVE DONE THIS IN MANIFEST. TODO CHECK HOW?
